@@ -1,3 +1,6 @@
 [submodule "vision_transformer"]
 	path = vision_transformer
 	url = https://github.com/google-research/vision_transformer
+[submodule "Awesome-Backbones"]
+	path = Awesome-Backbones
+	url = https://github.com/Fafa-DL/Awesome-Backbones
