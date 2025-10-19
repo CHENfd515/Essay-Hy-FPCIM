@@ -1,4 +1,5 @@
 # Vision Transformer (ViT-B/16) 模型结构
+## [ 注！本分析后经检查发现有误 ]
 基于 `torchvision.models.vit_b_16` 模型，分析其参数量（Num Params）和计算量（Mult-Adds / FLOPs）在各个主要模块中的分布和占比。
 
 ---
