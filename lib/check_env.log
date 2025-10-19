@@ -1,0 +1,284 @@
+======================================================================
+                         System and Environment Report
+======================================================================
+
+## Conda & Python Environment
+
+--- Conda Version ---
+conda 25.3.1
+
+
+--- Active Environment ---
+Name: vit
+Path: vit
+
+--- Python & OS Information ---
+Python Version: 3.11.12 (CPython)
+OS Platform: Linux-5.15.0-157-generic-x86_64-with-glibc2.35
+Python Executable Path: /usr/local/bin/python
+
+## CPU Information (via psutil and lscpu)
+Logical CPU Cores: 32
+Physical CPU Cores: 16
+Current CPU Frequency: 1.70 GHz
+Max CPU Frequency: 2.80 GHz
+
+--- CPU Model Name ---
+AMD EPYC 7282 16-Core Processor
+
+
+## Installed Packages
+
+--- Conda Packages (conda list) ---
+
+
+
+--- Pip Packages (pip list) ---
+Package                        Version
+------------------------------ ------------------------
+absl-py                        2.3.1
+aiofiles                       25.1.0
+anyio                          4.9.0
+aqtp                           0.9.0
+argon2-cffi                    23.1.0
+argon2-cffi-bindings           21.2.0
+array_record                   0.8.1
+arrow                          1.3.0
+asttokens                      3.0.0
+astunparse                     1.6.3
+async-lru                      2.0.5
+attrs                          25.3.0
+babel                          2.17.0
+beautifulsoup4                 4.13.4
+bleach                         6.2.0
+blinker                        1.4
+certifi                        2025.4.26
+cffi                           1.17.1
+charset-normalizer             3.4.2
+chex                           0.1.91
+cloudpickle                    3.1.1
+clu                            0.0.12
+comm                           0.2.2
+cryptography                   3.4.8
+dbus-python                    1.2.18
+debugpy                        1.8.14
+decorator                      5.2.1
+defusedxml                     0.7.1
+distro                         1.7.0
+distro-info                    1.1+ubuntu0.2
+dm-tree                        0.1.9
+docstring_parser               0.17.0
+einops                         0.8.1
+etils                          1.13.0
+executing                      2.2.0
+fastjsonschema                 2.21.1
+filelock                       3.16.1
+flatbuffers                    25.9.23
+flax                           0.12.0
+fqdn                           1.5.1
+fsspec                         2024.10.0
+gast                           0.6.0
+google-pasta                   0.2.0
+googleapis-common-protos       1.70.0
+grpcio                         1.75.1
+h11                            0.16.0
+h5py                           3.15.1
+httpcore                       1.0.9
+httplib2                       0.20.2
+httpx                          0.28.1
+humanize                       4.14.0
+idna                           3.10
+immutabledict                  4.2.2
+importlib-metadata             4.6.4
+importlib_resources            6.5.2
+ipykernel                      6.29.5
+ipython                        9.2.0
+ipython_pygments_lexers        1.1.1
+isoduration                    20.11.0
+jax                            0.7.1
+jaxlib                         0.7.1
+jedi                           0.19.2
+jeepney                        0.7.1
+Jinja2                         3.1.6
+json5                          0.12.0
+jsonpointer                    3.0.0
+jsonschema                     4.23.0
+jsonschema-specifications      2025.4.1
+jupyter_client                 8.6.3
+jupyter_core                   5.7.2
+jupyter-events                 0.12.0
+jupyter-lsp                    2.2.5
+jupyter_server                 2.15.0
+jupyter_server_terminals       0.5.3
+jupyterlab                     4.4.1
+jupyterlab-language-pack-zh-CN 4.4.post0
+jupyterlab_pygments            0.3.0
+jupyterlab_server              2.27.3
+keras                          3.11.3
+keyring                        23.5.0
+launchpadlib                   1.10.16
+lazr.restfulclient             0.14.4
+lazr.uri                       1.0.6
+libclang                       18.1.1
+Markdown                       3.9
+markdown-it-py                 4.0.0
+MarkupSafe                     3.0.2
+matplotlib-inline              0.1.7
+mdurl                          0.1.2
+mistune                        3.1.3
+ml_collections                 1.1.0
+ml_dtypes                      0.5.3
+more-itertools                 8.10.0
+mpmath                         1.3.0
+msgpack                        1.1.2
+namex                          0.1.0
+nbclient                       0.10.2
+nbconvert                      7.16.6
+nbformat                       5.10.4
+nest-asyncio                   1.6.0
+networkx                       3.4.2
+notebook_shim                  0.2.4
+numpy                          2.1.3
+nvidia-cublas-cu12             12.8.3.14
+nvidia-cuda-cupti-cu12         12.8.57
+nvidia-cuda-nvrtc-cu12         12.8.61
+nvidia-cuda-runtime-cu12       12.8.57
+nvidia-cudnn-cu12              9.8.0.87
+nvidia-cufft-cu12              11.3.3.41
+nvidia-cufile-cu12             1.13.0.11
+nvidia-curand-cu12             10.3.9.55
+nvidia-cusolver-cu12           11.7.2.55
+nvidia-cusparse-cu12           12.5.7.53
+nvidia-cusparselt-cu12         0.6.3
+nvidia-nccl-cu12               2.26.2
+nvidia-nvjitlink-cu12          12.8.61
+nvidia-nvtx-cu12               12.8.55
+oauthlib                       3.2.0
+opencv-contrib-python          4.11.0.86
+opt_einsum                     3.4.0
+optax                          0.2.6
+optree                         0.17.0
+orbax-checkpoint               0.11.25
+overrides                      7.7.0
+packaging                      25.0
+pandas                         2.3.3
+pandocfilters                  1.5.1
+parso                          0.8.4
+pexpect                        4.9.0
+pillow                         11.0.0
+pip                            25.0.1
+platformdirs                   4.3.7
+prometheus_client              0.21.1
+promise                        2.3
+prompt_toolkit                 3.0.51
+protobuf                       5.29.5
+psutil                         7.0.0
+ptyprocess                     0.7.0
+pure_eval                      0.2.3
+py3nvml                        0.2.7
+pyarrow                        21.0.0
+pycparser                      2.22
+Pygments                       2.19.1
+PyGObject                      3.42.1
+PyJWT                          2.3.0
+pyparsing                      2.4.7
+python-apt                     2.4.0+ubuntu4
+python-dateutil                2.9.0.post0
+python-json-logger             3.3.0
+pytorch-triton                 3.3.0+git96316ce5
+pytz                           2025.2
+PyYAML                         6.0.2
+pyzmq                          26.4.0
+referencing                    0.36.2
+requests                       2.32.3
+rfc3339-validator              0.1.4
+rfc3986-validator              0.1.1
+rich                           14.2.0
+rpds-py                        0.24.0
+scipy                          1.16.2
+SecretStorage                  3.3.1
+Send2Trash                     1.8.3
+setuptools                     80.3.1
+simple-parsing                 0.1.7
+simplejson                     3.20.2
+six                            1.16.0
+sniffio                        1.3.1
+soupsieve                      2.7
+ssh-import-id                  5.11
+stack-data                     0.6.3
+supervisor                     4.2.5
+sympy                          1.13.3
+tensorboard                    2.19.0
+tensorboard-data-server        0.7.2
+tensorflow                     2.19.1
+tensorflow_cpu                 2.19.1
+tensorflow-datasets            4.9.9
+tensorflow-io-gcs-filesystem   0.37.1
+tensorflow-metadata            1.17.2
+tensorflow-probability         0.25.0
+tensorflow-text                2.19.0
+tensorstore                    0.1.78
+termcolor                      3.1.0
+terminado                      0.18.1
+tinycss2                       1.4.0
+toml                           0.10.2
+toolz                          1.1.0
+torch                          2.8.0.dev20250505+cu128
+torchaudio                     2.6.0.dev20250505+cu128
+torchvision                    0.22.0.dev20250505+cu128
+tornado                        6.4.2
+tqdm                           4.67.1
+traitlets                      5.14.3
+treescope                      0.1.10
+types-python-dateutil          2.9.0.20241206
+typing_extensions              4.15.0
+tzdata                         2025.2
+unattended-upgrades            0.1
+uri-template                   1.3.0
+urllib3                        2.4.0
+wadllib                        1.3.6
+wcwidth                        0.2.13
+webcolors                      24.11.1
+webencodings                   0.5.1
+websocket-client               1.8.0
+Werkzeug                       3.1.3
+wheel                          0.45.1
+wrapt                          1.17.3
+xmltodict                      0.14.2
+zipp                           1.0.0
+
+
+## GPU & Driver Information
+
+--- PyTorch CUDA Status ---
+CUDA is available: True (PyTorch detected)
+PyTorch built with CUDA: 12.8
+Total GPU Devices: 1
+  - GPU 0 Name: NVIDIA GeForce RTX 5090
+
+--- NVIDIA Driver & System Info (nvidia-smi) ---
+Sun Oct 19 07:29:59 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.195.03             Driver Version: 570.195.03     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 5090        On  |   00000000:41:00.0 Off |                  N/A |
+|  0%   50C    P8             15W /  600W |       4MiB /  32607MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+
+======================================================================
+Report Finished.
+======================================================================
