@@ -4,6 +4,41 @@ import torch.nn as nn
 import math
 ORIG_MATMUL = torch.matmul
 
+# 原子核规格：1x64 与 64x8（你可按需改）
+_TILE_M, _TILE_K, _TILE_N = 1, 64, 8
+
+# 全局计数器
+_HW = {"tiles_total": 0, "tiles_matmul": 0, "tiles_conv": 0}
+
+def reset_hw_counter():
+    _HW["tiles_total"] = 0
+    _HW["tiles_matmul"] = 0
+    _HW["tiles_conv"] = 0
+
+def _ceil_div(a, b):
+    return (a + b - 1) // b
+
+def count_matmul_tiles(M, K, N, kind="matmul"):
+    tiles = _ceil_div(M, _TILE_M) * _ceil_div(K, _TILE_K) * _ceil_div(N, _TILE_N)
+    _HW["tiles_total"] += tiles
+    if kind == "matmul":
+        _HW["tiles_matmul"] += tiles
+    elif kind == "conv":
+        _HW["tiles_conv"] += tiles
+    return tiles
+
+def report_hw_counter(freq_hz=200_000_000):
+    # 1 原子核 / 周期，理想串行模型
+    cycles = _HW["tiles_total"]
+    seconds = cycles / float(freq_hz)
+    ms = seconds * 1e3
+    us = seconds * 1e6
+    print(f"[BF15-HW] tiles_total={_HW['tiles_total']}, matmul={_HW['tiles_matmul']}, conv={_HW['tiles_conv']}")
+    if ms >= 1.0:
+        print(f"[BF15-HW] 估计总时延: {ms:.2f} ms @ 200 MHz")
+    else:
+        print(f"[BF15-HW] 估计总时延: {us:.2f} µs @ 200 MHz")
+
 # ---------------------------
 # 1) 将张量数值“仿真成 BF15”
 #    （在 FP32 域用 frexp 拆分，再清掉尾数最低1位）
@@ -40,18 +75,27 @@ def to_bf15_real_fp32(x: torch.Tensor) -> torch.Tensor:
 # 2) BF15 仿真 matmul（全向量化）
 # ---------------------------
 @torch.no_grad()
-def bf15_left_matmul(A: torch.Tensor, B: torch.Tensor) -> torch.Tensor:
+def bf15_left_matmul(A: torch.Tensor, B: torch.Tensor, count_hw: bool = True) -> torch.Tensor:
     """
-    只把左矩阵 A 仿真到 BF15（frexp 截尾），右矩阵 B 保持 BF16（用其真实值，FP32计算）。
-    输出转回 BF16，方便与下游衔接。
+    只把左矩阵 A 仿真为 BF15，再用 FP32 matmul。
+    同时模拟硬件 tile 划分与总时延估计。
     """
-    # 左：BF15 实值（FP32）
-    A_bf15 = to_bf15_real_fp32(A)
-    # 右：保持 BF16 的真实值（直接升到 FP32 即可）
-    B_real = B.to(torch.float32)
 
-    out_fp32 = ORIG_MATMUL(A_bf15, B_real)   # 用原生 matmul，避免递归
+    # 左矩阵：BF15 实值（FP32）
+    A_bf15 = to_bf15_real_fp32(A)
+    # 右矩阵：BF16 转 FP32
+    B_real = B.to(torch.float32)
+    
+    if A.dim() == 2 and B.dim() == 2:
+        M, K = A.shape
+        K2, N = B.shape
+        if K == K2:
+            count_matmul_tiles(M, K, N, kind="matmul")
+
+    # ---- 实际 matmul ----
+    out_fp32 = ORIG_MATMUL(A_bf15, B_real)
     return out_fp32.to(torch.bfloat16)
+
 
 
 # ---------------------------
